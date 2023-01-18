@@ -12,10 +12,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Fatbrother\'s Website',
       debugShowCheckedModeBanner: false,
       theme: Design.getThemeData(),
-      home: MainPage(),
+      routes: {'/': (context) => MainPage()},
+      initialRoute: '/',
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+          builder: (context) => MainPage(),
+        );
+      }
     );
   }
 }

@@ -27,7 +27,6 @@ class _AboutPageState extends State<AboutPage> {
       _leetCodeRating = json
           .jsonDecode(content)['data']['userContestRanking']['rating']
           .toString();
-      debugPrint('LeetCodeRank: $_leetCodeRating');
     } catch (e) {
       debugPrint('Error: $e');
     }
