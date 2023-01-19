@@ -1,7 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:my_personal_website/utilities/design.dart';
-import 'package:http/http.dart' as http;
 import 'dart:convert' as json;
+
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:my_personal_website/utilities/design.dart';
+import 'package:my_personal_website/widgets/about_me_list.dart';
+import 'package:my_personal_website/widgets/logo_bax.dart';
+import 'package:my_personal_website/widgets/page_box.dart';
 
 class AboutPage extends StatefulWidget {
   const AboutPage({super.key});
@@ -50,14 +54,41 @@ class _AboutPageState extends State<AboutPage> {
       '擅長語言: C++, Dart, Python',
       '擅長框架: SFML, Flutter, Flask',
     ];
-    return Container(
-      height: Design.getMatirialHeight(context) - Design.appBarHeight,
-      color: Theme.of(context).colorScheme.background,
+
+    List<CircleAvatar> icons = [
+      CircleAvatar(
+          radius: 40,
+          backgroundColor: Colors.transparent,
+          child: Image.asset('logos/C++.png')),
+      CircleAvatar(
+          radius: 40,
+          backgroundColor: Colors.transparent,
+          child: Image.asset('logos/dart.png')),
+      CircleAvatar(
+          radius: 40,
+          backgroundColor: Colors.transparent,
+          child: Image.asset('logos/flask.png')),
+      CircleAvatar(
+          radius: 40,
+          backgroundColor: Colors.transparent,
+          child: Image.asset('logos/flutter.png')),
+      CircleAvatar(
+          radius: 40,
+          backgroundColor: Colors.transparent,
+          child: Image.asset('logos/python.png')),
+      CircleAvatar(
+          radius: 40,
+          backgroundColor: Colors.transparent,
+          child: Image.asset('logos/SFML.png')),
+    ];
+
+    return PageBox(
+      backgroundColor: Theme.of(context).colorScheme.background,
       child: Padding(
         padding: EdgeInsets.fromLTRB(
+          Design.getMatirialWidth(context) / 6,
           Design.getMatirialHeight(context) / 4,
-          Design.getMatirialHeight(context) / 4,
-          Design.getMatirialHeight(context) / 4,
+          Design.getMatirialWidth(context) / 6,
           0,
         ),
         child: Stack(
@@ -65,33 +96,13 @@ class _AboutPageState extends State<AboutPage> {
             Positioned(
               top: 0.0,
               right: 0.0,
-              child: SizedBox(
-                width: Design.getMatirialWidth(context) * 0.3,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'About Me',
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
-                    const SizedBox(height: 10.0),
-                    Container(
-                      height: 2.0,
-                      width: Design.getMatirialWidth(context) * 0.3,
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
-                    for (var content in contents)
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10.0),
-                        child: Text(
-                          content,
-                          style: Theme.of(context).textTheme.bodyLarge,
-                        ),
-                      ),
-                  ],
-                ),
-              ),
+              child: AboutMeList(contents: contents),
             ),
+            Positioned(
+              top: 0.0,
+              left: 0.0,
+              child: LogoBox(icons: icons),
+            )
           ],
         ),
       ),
