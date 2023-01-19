@@ -14,11 +14,12 @@ class _AboutPageState extends State<AboutPage> {
   String _leetCodeRating = '';
 
   Future<void> getLeetCodeRank() async {
-    String url =
-        'https://leetcode.com/graphql?query=query{userContestRanking(username:"kevin92422") {rating}}';
     String content = '';
     try {
-      var result = await http.get(Uri.parse(url));
+      String apiUrl =
+          'https://leetcode.com/graphql?query=query{userContestRanking(username:%22kevin92422%22){rating}}';
+      String corsUrl = 'https://cors-anywhere.herokuapp.com/';
+      var result = await http.get(Uri.parse(corsUrl + apiUrl));
       content = result.body;
     } catch (e) {
       debugPrint('Error: $e');
