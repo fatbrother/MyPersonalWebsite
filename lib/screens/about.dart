@@ -2,7 +2,7 @@ import 'dart:convert' as json;
 import 'package:flutter/services.dart' show rootBundle;
 
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import 'package:my_personal_website/utilities/crawler.dart';
 
 import 'package:my_personal_website/utilities/design.dart';
 import 'package:my_personal_website/widgets/about_me_list.dart';
@@ -21,13 +21,11 @@ class _AboutPageState extends State<AboutPage> {
   List<String> files = [];
 
   Future<void> getLeetCodeRank() async {
+    String url =
+        'https://leetcode.com/graphql?query=query{userContestRanking(username:%22kevin92422%22){rating}}';
     String content = '';
     try {
-      String apiUrl =
-          'https://leetcode.com/graphql?query=query{userContestRanking(username:%22kevin92422%22){rating}}';
-      String corsUrl = 'https://cors-anywhere.herokuapp.com/';
-      var result = await http.get(Uri.parse(corsUrl + apiUrl));
-      content = result.body;
+      content = await Crawler.getApi(url);
     } catch (e) {
       debugPrint('Error1 in about: $e');
     }
@@ -81,13 +79,14 @@ class _AboutPageState extends State<AboutPage> {
     List<CircleAvatar> icons = [
       for (String dir in files)
         CircleAvatar(
-            radius: 45,
+            radius: Design.getMatirialWidth(context) * 0.03,
             backgroundColor: Colors.transparent,
             child: Image.asset(dir)),
     ];
 
     return PageBox(
       backgroundColor: Theme.of(context).colorScheme.background,
+      padding: const EdgeInsets.all(0),
       child: Stack(
         children: [
           Positioned(

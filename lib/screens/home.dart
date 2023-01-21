@@ -9,22 +9,20 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageBox(
       backgroundColor: Theme.of(context).colorScheme.primary,
-      child: Padding(
-        padding: EdgeInsets.fromLTRB(
-          Design.getMatirialWidth(context) / 6,
-          Design.getMatirialHeight(context) / 3.5,
-          Design.getMatirialWidth(context) / 6,
-          0,
-        ),
-        child: Stack(
-          children: const [
-            Positioned(
-              top: 0.0,
-              left: 0.0,
-              child: WelcomeQuote(),
-            ),
-          ],
-        ),
+      padding: EdgeInsets.fromLTRB(
+        Design.getMatirialWidth(context) / 6,
+        Design.getMatirialHeight(context) / 3.5,
+        Design.getMatirialWidth(context) / 6,
+        0,
+      ),
+      child: Stack(
+        children: const [
+          Positioned(
+            top: 0.0,
+            left: 0.0,
+            child: WelcomeQuote(),
+          ),
+        ],
       ),
     );
   }
