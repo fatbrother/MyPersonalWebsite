@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_personal_website/screens/about.dart';
+import 'package:my_personal_website/screens/bottom.dart';
 import 'package:my_personal_website/screens/home.dart';
 import 'package:my_personal_website/screens/works.dart';
 import 'package:my_personal_website/widgets/app_bar.dart';
@@ -14,18 +15,21 @@ class MainPage extends StatelessWidget {
     const HomePage(),
     const AboutPage(),
     const WorksPage(),
+    const ButtomBar(),
   ];
+
+  void goto(int index) {
+    _itemScrollController.scrollTo(
+      index: index,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TitleAppBar(
-        onPressed: (index) => _itemScrollController.scrollTo(
-          index: index,
-          duration: const Duration(milliseconds: 500),
-          curve: Curves.easeInOut,
-        ),
-      ),
+      appBar: TitleAppBar(onPressed: goto),
       body: ScrollablePositionedList.builder(
         itemCount: _buildPages.length,
         itemBuilder: (context, index) => _buildPages[index],
