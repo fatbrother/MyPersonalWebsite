@@ -39,10 +39,10 @@ class LogoBox extends StatelessWidget {
         return true;
       }
     }
-    if (newPosition.x - itemRadius * 2 < 0 ||
-        newPosition.x + itemRadius * 2 > width ||
-        newPosition.y - itemRadius * 2 < 0 ||
-        newPosition.y + itemRadius * 2 > height) {
+    if (newPosition.x - itemRadius * 2 <= 0 ||
+        newPosition.x + itemRadius * 2 >= width ||
+        newPosition.y - itemRadius * 2 <= 0 ||
+        newPosition.y + itemRadius * 2 >= height) {
       return true;
     }
     return false;
@@ -50,14 +50,14 @@ class LogoBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double width = Design.getMatirialWidth(context) * 0.3;
+    final double width = Design.getMatirialWidth(context) * 0.4;
     final double height = Design.getMatirialHeight(context) * 0.5;
 
     final List<Point<double>> points = _positionGenerator(
       width,
       height,
       icons.length,
-      icons[0].radius ?? 0.0,
+      icons.isEmpty ? 0 : icons[0].radius ?? 0,
     );
     return SizedBox(
       width: width,
