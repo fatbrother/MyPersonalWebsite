@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class Design {
   static double get appBarHeight => 80.0;
+  static double get bottomBarHeight => 100.0;
 
   static double getMatirialHeight(BuildContext context) {
     return MediaQuery.of(context).size.height;
@@ -36,7 +37,7 @@ class Design {
           fontWeight: FontWeight.normal,
         ),
         bodyLarge: TextStyle(
-          fontSize: 18.0,
+          fontSize: 20.0,
           color: Color(0xFFFFFFFF),
           fontWeight: FontWeight.normal,
         ),
