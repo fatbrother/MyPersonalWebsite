@@ -1,9 +1,7 @@
 import 'dart:convert' as json;
-import 'package:flutter/services.dart' show rootBundle;
 
 import 'package:flutter/material.dart';
-import 'package:my_personal_website/utilities/crawler.dart';
-
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:my_personal_website/utilities/design.dart';
 import 'package:my_personal_website/widgets/about_me_list.dart';
 import 'package:my_personal_website/widgets/logo_box.dart';
@@ -17,30 +15,11 @@ class AboutPage extends StatefulWidget {
 }
 
 class _AboutPageState extends State<AboutPage> {
-  String _leetCodeRating = '';
   List<String> files = [];
-
-  Future<void> getLeetCodeRank() async {
-    String url =
-        'https://leetcode.com/graphql?query=query{userContestRanking(username:%22kevin92422%22){rating}}';
-    String content = '';
-    try {
-      content = await Crawler.getApi(url);
-    } catch (e) {
-      debugPrint('Error1 in about: $e');
-    }
-    try {
-      _leetCodeRating = json
-          .jsonDecode(content)['data']['userContestRanking']['rating']
-          .toString();
-    } catch (e) {
-      debugPrint('Error2 in about: $e');
-    }
-  }
 
   Future<void> getLogoFiles() async {
     try {
-      String dirJsonFile = await rootBundle.loadString('logos/all.json');
+      String dirJsonFile = await rootBundle.loadString('assets/logos/all.json');
       String folderName = json.jsonDecode(dirJsonFile)['folderName'];
       List list = json.jsonDecode(dirJsonFile)['files'];
       for (var name in list) {
@@ -52,7 +31,6 @@ class _AboutPageState extends State<AboutPage> {
   }
 
   Future<void> loadInfo() async {
-    await getLeetCodeRank();
     await getLogoFiles();
     if (mounted) {
       setState(() {});
@@ -71,7 +49,6 @@ class _AboutPageState extends State<AboutPage> {
       'ICPC 2022 桃園站 銅牌',
       'NCPC 2022 佳作',
       '北大資工系程式設計社社長',
-      'LeetCode Rating: $_leetCodeRating',
       '擅長語言: C++, Dart, Python',
       '擅長框架: SFML, Flutter, Flask',
     ];

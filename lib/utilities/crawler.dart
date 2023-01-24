@@ -4,8 +4,7 @@ class Crawler {
   static Future<String> getApi(String url) async {
     String content = '';
     try {
-      String corsUrl = 'https://cors-anywhere.herokuapp.com/';
-      var result = await http.get(Uri.parse(corsUrl + url));
+      var result = await http.get(Uri.parse(url));
       content = result.body;
     } catch (e) {
       rethrow;
