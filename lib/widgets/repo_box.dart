@@ -8,19 +8,21 @@ class RepoBox extends StatelessWidget {
   const RepoBox({
     Key? key,
     required this.repo,
-    required this.colors,
+    required this.color,
   }) : super(key: key);
 
   final Repo repo;
-  final Map<String, Color> colors;
+  final Color color;
+  static const double width = 320;
+  static const double height = 160;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => js.context.callMethod("open", [repo.url]),
       child: Container(
-        height: 160,
-        width: 320,
+        height: height,
+        width: width,
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
@@ -50,7 +52,7 @@ class RepoBox extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 5,
-                  backgroundColor: colors[repo.language],
+                  backgroundColor: color,
                 ),
                 const SizedBox(width: 10),
                 Text(repo.language ?? '',

@@ -5,7 +5,7 @@ import 'package:my_personal_website/modules/repo.dart';
 import 'package:my_personal_website/utilities/crawler.dart';
 import 'package:my_personal_website/utilities/design.dart';
 import 'package:my_personal_website/widgets/page_box.dart';
-import 'package:my_personal_website/widgets/repo_box.dart';
+import 'package:my_personal_website/widgets/repo_list.dart';
 import 'package:my_personal_website/widgets/see_more_button.dart';
 
 class WorksPage extends StatefulWidget {
@@ -87,10 +87,10 @@ class _WorksPageState extends State<WorksPage> {
     return PageBox(
       backgroundColor: Theme.of(context).primaryColor,
       padding: EdgeInsets.fromLTRB(
-        Design.getMatirialWidth(context) / 6,
-        Design.getMatirialHeight(context) * 0.1,
-        Design.getMatirialWidth(context) / 6,
-        Design.getMatirialHeight(context) * 0.1,
+        Design.getMatirialWidth(context) * 0.15,
+        Design.getMatirialHeight(context) * 0.08,
+        Design.getMatirialWidth(context) * 0.15,
+        Design.getMatirialHeight(context) * 0.08,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,18 +111,7 @@ class _WorksPageState extends State<WorksPage> {
             ],
           ),
           const SizedBox(height: 20.0),
-          SizedBox(
-            height: Design.getMatirialHeight(context) * 0.5,
-            width: double.infinity,
-            child: Wrap(
-              alignment: WrapAlignment.spaceBetween,
-              runSpacing: 20,
-              children: [
-                for (int i = 0; i < repos.length && i < 6; i++)
-                  RepoBox(repo: repos[i], colors: colors)
-              ],
-            ),
-          ),
+          RepoList(repos: repos, colors: colors),
           const Center(child: SeeMoreButton()),
         ],
       ),
