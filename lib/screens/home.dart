@@ -10,9 +10,9 @@ class HomePage extends StatelessWidget {
     return PageBox(
       backgroundColor: Theme.of(context).colorScheme.primary,
       padding: EdgeInsets.fromLTRB(
-        Design.getMatirialWidth(context) / 6,
+        Design.getMatirialWidth(context) * 0.15,
         Design.getMatirialHeight(context) / 3.5,
-        Design.getMatirialWidth(context) / 6,
+        Design.getMatirialWidth(context) * 0.15,
         0,
       ),
       child: Stack(
