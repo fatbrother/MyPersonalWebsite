@@ -1,4 +1,5 @@
 import 'dart:convert' as json;
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
@@ -53,10 +54,12 @@ class _AboutPageState extends State<AboutPage> {
       '擅長框架: SFML, Flutter, Flask',
     ];
 
+    double standard = min(Design.getMatirialWidth(context),
+        Design.getMatirialHeight(context));
     List<CircleAvatar> icons = [
       for (String dir in files)
         CircleAvatar(
-            radius: Design.getMatirialWidth(context) * 0.03,
+            radius: standard * 0.05,
             backgroundColor: Colors.transparent,
             child: Image.asset(dir)),
     ];
