@@ -7,7 +7,7 @@ class WelcomeQuote extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: Design.getMatirialHeight(context) - Design.appBarHeight,
+      height: Design.getMatirialHeight(context) * 0.5,
       width: Design.getMatirialWidth(context) * 0.3,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -18,7 +18,7 @@ class WelcomeQuote extends StatelessWidget {
                 'Hello, I\'m',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              Text(' Kevin',
+              Text(' Kevin Liu!',
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
                         color: Theme.of(context).colorScheme.secondary,
                       )),
