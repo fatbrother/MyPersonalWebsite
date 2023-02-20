@@ -26,7 +26,7 @@ class RepoBox extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Theme.of(context).backgroundColor,
+          color: Theme.of(context).colorScheme.background,
         ),
         constraints: BoxConstraints(
           maxWidth: Design.getMatirialWidth(context) * 0.7,

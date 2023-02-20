@@ -15,7 +15,6 @@ class Design {
   static ThemeData getThemeData() {
     return ThemeData(
       primaryColor: const Color(0xFF3D5A80),
-      backgroundColor: const Color(0xFF293241),
       colorScheme: const ColorScheme.light(
         primary: Color(0xFF3D5A80),
         secondary: Color(0xFFEE6C4D),
