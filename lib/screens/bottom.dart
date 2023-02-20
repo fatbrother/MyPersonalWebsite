@@ -42,6 +42,7 @@ class ButtomBar extends StatelessWidget {
                   padding: const EdgeInsets.all(0),
                   icon: const Icon(
                     FontAwesomeIcons.envelope,
+                    color: Colors.white,
                     size: 30,
                   ),
                 ),
@@ -52,6 +53,7 @@ class ButtomBar extends StatelessWidget {
                   padding: const EdgeInsets.all(0),
                   icon: const Icon(
                     FontAwesomeIcons.discord,
+                    color: Colors.white,
                     size: 30,
                   ),
                 ),
@@ -65,6 +67,7 @@ class ButtomBar extends StatelessWidget {
                   padding: const EdgeInsets.all(0),
                   icon: const Icon(
                     FontAwesomeIcons.instagram,
+                    color: Colors.white,
                     size: 30,
                   ),
                 ),
@@ -79,6 +82,7 @@ class ButtomBar extends StatelessWidget {
                   padding: const EdgeInsets.all(0),
                   icon: const Icon(
                     FontAwesomeIcons.facebook,
+                    color: Colors.white,
                     size: 30,
                   ),
                 ),
