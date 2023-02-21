@@ -37,7 +37,7 @@ class ButtomBar extends StatelessWidget {
                 ),
                 const SizedBox(width: 10),
                 IconButton(
-                  onPressed: () => copyText("kevin92422@gmail.com", context),
+                  onPressed: () => js.context.callMethod("open", ['mailto:kevin92422@gmail.com']),
                   iconSize: 30,
                   padding: const EdgeInsets.all(0),
                   icon: const Icon(
