@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_personal_website/utilities/design.dart';
 
-class TitleAppBar extends StatelessWidget with PreferredSizeWidget {
+class TitleAppBar extends StatelessWidget implements PreferredSizeWidget {
   final void Function(int index) onPressed;
   
   const TitleAppBar({
