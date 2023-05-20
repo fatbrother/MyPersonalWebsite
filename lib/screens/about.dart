@@ -50,6 +50,7 @@ class _AboutPageState extends State<AboutPage> {
       'ICPC 2022 桃園站 銅牌',
       'NCPC 2022 佳作',
       '北大資工系程式設計社社長',
+      '北大Python課課程助教',
       '擅長語言: C++, Dart, Python',
       '擅長框架: SFML, Flutter, Flask',
     ];

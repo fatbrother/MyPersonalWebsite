@@ -36,12 +36,12 @@ class Design {
           fontWeight: FontWeight.normal,
         ),
         bodyLarge: TextStyle(
-          fontSize: 20.0,
+          fontSize: 24.0,
           color: Color(0xFFFFFFFF),
           fontWeight: FontWeight.normal,
         ),
         bodySmall: TextStyle(
-          fontSize: 16.0,
+          fontSize: 20.0,
           color: Color(0xFFFFFFFF),
           fontWeight: FontWeight.normal,
         ),

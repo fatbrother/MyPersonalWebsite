@@ -2,38 +2,43 @@ import 'package:flutter/material.dart';
 import 'package:my_personal_website/utilities/design.dart';
 
 class WelcomeQuote extends StatelessWidget {
-  const WelcomeQuote({Key? key}) : super(key: key);
+  const WelcomeQuote(
+    this.quote, {
+    Key? key,
+  }) : super(key: key);
+
+  final String quote;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: Design.getMatirialHeight(context) * 0.5,
-      width: Design.getMatirialWidth(context) * 0.3,
+      width: Design.getMatirialWidth(context) * 0.4,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
               Text(
-                'Hello, I\'m',
+                'Hello  我是',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              Text(' Kevin Liu!',
+              Text('劉又瑄!',
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
                         color: Theme.of(context).colorScheme.secondary,
                       )),
             ],
           ),
           const SizedBox(height: 10.0),
-          Text(
-            'A junior software developer.',
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),
-          const SizedBox(height: 5.0),
-          Text(
-            'Welcome to my personal website.',
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),
+          SizedBox(
+            width: Design.getMatirialWidth(context) * 0.3,
+            child: Text(
+              quote,
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                height: 1.4,
+              )
+            ),
+          )
         ],
       ),
     );

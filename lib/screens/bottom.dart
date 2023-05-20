@@ -48,11 +48,14 @@ class ButtomBar extends StatelessWidget {
                 ),
                 const SizedBox(width: 10),
                 IconButton(
-                  onPressed: () => copyText("劉又瑄#8450", context),
+                  onPressed: () {
+                    String userUrl = "https://www.linkedin.com/in/%E5%8F%88%E7%91%84-%E5%8A%89-2b31a4276/";
+                    js.context.callMethod("open", [userUrl]);
+                  },
                   iconSize: 30,
                   padding: const EdgeInsets.all(0),
                   icon: const Icon(
-                    FontAwesomeIcons.discord,
+                    FontAwesomeIcons.linkedin,
                     color: Colors.white,
                     size: 30,
                   ),
@@ -60,13 +63,13 @@ class ButtomBar extends StatelessWidget {
                 const SizedBox(width: 10),
                 IconButton(
                   onPressed: () {
-                    String userUrl = "https://www.instagram.com/maybeiamafrog/";
+                    String userUrl = "https://www.linkedin.com/in/%E5%8F%88%E7%91%84-%E5%8A%89-2b31a4276/";
                     js.context.callMethod("open", [userUrl]);
                   },
                   iconSize: 30,
                   padding: const EdgeInsets.all(0),
                   icon: const Icon(
-                    FontAwesomeIcons.instagram,
+                    FontAwesomeIcons.github,
                     color: Colors.white,
                     size: 30,
                   ),
