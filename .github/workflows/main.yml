@@ -16,6 +16,7 @@ jobs:
       with:
           channel: 'dev'
     - run: flutter upgrade v 3.11.0
+    - run: flutter clean
     - run: flutter pub get
     - run: flutter config --enable-web
     - run: flutter build web
