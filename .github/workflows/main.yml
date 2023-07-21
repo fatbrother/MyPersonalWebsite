@@ -18,8 +18,7 @@ jobs:
     - run: flutter upgrade v 3.11.0
     - run: flutter pub get
     - run: flutter config --enable-web
-    - run: export EXTRA_FRONT_END_OPTIONS=--no-sound-null-safety
-    - run: flutter build web
+    - run: flutter build web ---no-sound-null-safety
     - name: Deploy to Firebase
       uses: w9jds/firebase-action@master
       with:
