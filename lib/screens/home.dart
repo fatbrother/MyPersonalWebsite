@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageBox(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor: Theme.of(context).colorScheme.background,
       padding: EdgeInsets.fromLTRB(
         Design.getMatirialWidth(context) * 0.07,
         Design.getMatirialHeight(context) * 0.07,

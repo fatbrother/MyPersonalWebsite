@@ -35,7 +35,7 @@ class TitleAppBar extends StatelessWidget implements PreferredSizeWidget {
             ElevatedButton(
               onPressed: () => onPressed(3),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Theme.of(context).colorScheme.secondary,
+                backgroundColor: Theme.of(context).colorScheme.primary,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5.0),
                 ),

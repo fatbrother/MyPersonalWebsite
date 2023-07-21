@@ -12,7 +12,7 @@ class ButtomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.secondary,
       width: Design.getMatirialWidth(context),
       height: Design.bottomBarHeight,
       padding: EdgeInsets.fromLTRB(
@@ -42,7 +42,7 @@ class ButtomBar extends StatelessWidget {
                   padding: const EdgeInsets.all(0),
                   icon: const Icon(
                     FontAwesomeIcons.envelope,
-                    color: Colors.white,
+                    color: Colors.black,
                     size: 30,
                   ),
                 ),
@@ -56,7 +56,7 @@ class ButtomBar extends StatelessWidget {
                   padding: const EdgeInsets.all(0),
                   icon: const Icon(
                     FontAwesomeIcons.linkedin,
-                    color: Colors.white,
+                    color: Colors.black,
                     size: 30,
                   ),
                 ),
@@ -70,7 +70,7 @@ class ButtomBar extends StatelessWidget {
                   padding: const EdgeInsets.all(0),
                   icon: const Icon(
                     FontAwesomeIcons.github,
-                    color: Colors.white,
+                    color: Colors.black,
                     size: 30,
                   ),
                 ),
@@ -85,7 +85,7 @@ class ButtomBar extends StatelessWidget {
                   padding: const EdgeInsets.all(0),
                   icon: const Icon(
                     FontAwesomeIcons.facebook,
-                    color: Colors.white,
+                    color: Colors.black,
                     size: 30,
                   ),
                 ),

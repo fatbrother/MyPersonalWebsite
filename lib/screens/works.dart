@@ -85,7 +85,7 @@ class _WorksPageState extends State<WorksPage> {
   @override
   Widget build(BuildContext context) {
     return PageBox(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Theme.of(context).colorScheme.background,
       padding: EdgeInsets.fromLTRB(
         Design.getMatirialWidth(context) * 0.15,
         Design.getMatirialHeight(context) * 0.08,

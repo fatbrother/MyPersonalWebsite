@@ -66,7 +66,7 @@ class _AboutPageState extends State<AboutPage> {
     ];
 
     return PageBox(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.secondary,
       padding: const EdgeInsets.all(0),
       child: Stack(
         children: [

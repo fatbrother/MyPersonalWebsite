@@ -25,7 +25,7 @@ class WelcomeQuote extends StatelessWidget {
               ),
               Text('劉又瑄!',
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                        color: Theme.of(context).colorScheme.secondary,
+                        color: Theme.of(context).colorScheme.primary,
                       )),
             ],
           ),

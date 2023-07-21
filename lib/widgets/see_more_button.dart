@@ -23,8 +23,7 @@ class SeeMoreButton extends StatelessWidget {
         'See more...',
         style: Theme.of(context)
             .textTheme
-            .bodyLarge!
-            .copyWith(color: Theme.of(context).colorScheme.secondary),
+            .bodyLarge!,
       ),
     );
   }

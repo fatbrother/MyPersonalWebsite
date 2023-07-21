@@ -26,7 +26,7 @@ class RepoBox extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Theme.of(context).colorScheme.background,
+          color: Theme.of(context).colorScheme.secondary,
         ),
         constraints: BoxConstraints(
           maxWidth: Design.getMatirialWidth(context) * 0.7,
@@ -45,7 +45,9 @@ class RepoBox extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 Text(repo.description ?? '',
-                    style: Theme.of(context).textTheme.bodySmall),
+                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                      fontWeight: FontWeight.bold,
+                    )),
               ],
             ),
             Row(

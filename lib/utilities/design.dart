@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
+class ColorSet {
+  static const Color primary = Color.fromARGB(255, 63, 130, 255);
+  static const Color secondary = Color.fromARGB(255, 155, 218, 255);
+  static const Color background = Color.fromARGB(255, 255, 255, 255);
+  static const Color text = Color.fromARGB(255, 0, 0, 0);
+}
+
 class Design {
-  static double get appBarHeight => 80.0;
+  static double get appBarHeight => 70.0;
   static double get bottomBarHeight => 100.0;
 
   static double getMatirialHeight(BuildContext context) {
@@ -14,35 +21,34 @@ class Design {
 
   static ThemeData getThemeData() {
     return ThemeData(
-      primaryColor: const Color(0xFF3D5A80),
       colorScheme: const ColorScheme.light(
-        primary: Color(0xFF3D5A80),
-        secondary: Color(0xFFEE6C4D),
-        background: Color(0xFF293241),
+        primary: ColorSet.primary,
+        secondary: ColorSet.secondary,
+        background: ColorSet.background,
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: const Color(0xFF3D5A80),
+        backgroundColor: ColorSet.secondary,
         toolbarHeight: appBarHeight,
       ),
       textTheme: const TextTheme(
         titleLarge: TextStyle(
           fontSize: 40.0,
-          color: Color(0xFFFFFFFF),
+          color: ColorSet.text,
           fontWeight: FontWeight.bold,
         ),
         titleSmall: TextStyle(
           fontSize: 28.0,
-          color: Color(0xFFFFFFFF),
-          fontWeight: FontWeight.normal,
+          color: ColorSet.text,
+          fontWeight: FontWeight.bold,
         ),
         bodyLarge: TextStyle(
           fontSize: 24.0,
-          color: Color(0xFFFFFFFF),
-          fontWeight: FontWeight.normal,
+          color: ColorSet.text,
+          fontWeight: FontWeight.bold,
         ),
         bodySmall: TextStyle(
-          fontSize: 20.0,
-          color: Color(0xFFFFFFFF),
+          fontSize: 16.0,
+          color: ColorSet.text,
           fontWeight: FontWeight.normal,
         ),
       ),
